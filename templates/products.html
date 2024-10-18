@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Our Products</h2>
+
+<!-- Table to display products -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Tag</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop through each product in the products list -->
+        {% for product in products %}
+        <tr>
+            <!-- Display product name -->
+            <td>{{ product.name }}</td> 
+            <!-- Display product tag -->
+            <td>{{ product.tag }}</td> 
+            <!-- Display product price with a dollar sign -->
+            <td>${{ product.price }}</td> 
+            <td>
+                <!-- Display product image -->
+                <img src="{{ url_for('static', filename=product.image_path) }}" alt="{{ product.name }}" width="200">
+            </td>
+        </tr>
+        {% else %}
+        <!-- If there are no products, display a message -->
+        <tr>
+            <td colspan="4">No products available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
