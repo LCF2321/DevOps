@@ -4,8 +4,8 @@ import os
 load_dotenv()
 
 # Access the environment variables
-MONGODB_USERNAME = os.getenv('negiseema621')
-MONGODB_PASSWORD = os.getenv('Seema%4024')
+MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
 
 
 
