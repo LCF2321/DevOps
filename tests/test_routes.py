@@ -1,5 +1,10 @@
 import unittest
 from app import app
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))  # Add root folder to sys.path
+from app import app
+
 
 class TestRoutes(unittest.TestCase):
     
